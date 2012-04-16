@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-package com.aevo.waterdog.mobile.android.util;
+package com.monxalo.android.widget;
 
 import java.util.LinkedHashMap;
 
