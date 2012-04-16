@@ -1,5 +1,5 @@
 /***
-	Copyright 2011 Gonçalo Ferreira
+	Copyright 2011 GonÁalo Ferreira
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-package com.monxalo.android.widget;
+package com.aevo.waterdog.mobile.android.util;
 
 import java.util.LinkedHashMap;
 
@@ -42,6 +42,10 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
     private final LayoutInflater mLayoutInflater;
     
     private LinkedHashMap<Integer, String> sectionsIndexer;
+    
+    public static class ViewHolder {
+        public TextView textView;
+    }
     
 	public SectionCursorAdapter(Context context, Cursor c, int headerLayout, int groupColumn) {
 		super(context, c);
@@ -116,7 +120,26 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 			
 			return super.getView(mapCursorPos, convertView, parent);
 		} else {				 
-			TextView sectionText =  (TextView) mLayoutInflater.inflate(mHeaderRes, null);
+			
+			ViewHolder holder = null;
+			
+			if (convertView == null) {
+				if (LOGV)
+					Log.v(TAG, "Creating new view for section");
+				
+                holder = new ViewHolder();
+                convertView = mLayoutInflater.inflate(mHeaderRes, null);
+                holder.textView = (TextView) convertView;
+                
+                convertView.setTag(holder);
+			} else {
+				if (LOGV)
+					Log.v(TAG, "Reusing view for section");
+				
+				holder = (ViewHolder)convertView.getTag();
+			}
+			
+			TextView sectionText =  holder.textView;
 			
 			final String group = sectionsIndexer.get(position);
 			final String customFormat = getGroupCustomFormat(group) ;
