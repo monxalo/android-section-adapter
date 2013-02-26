@@ -72,6 +72,18 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 			sectionsIndexer.clear();
 		};
 	};
+	
+	/**
+	 * <p>This method serve as an intercepter before the sections are calculated so you can transform some computer data into human readable,
+	 * e.g. format a unix timestamp, or a status.</p>
+	 * 
+	 * <p>By default this method returns the original data for the group column.</p>
+	 * @param groupData
+	 * @return 
+	 */
+	protected String getCustomGroup(String groupData) {
+        return groupData;
+	}
 
 	private void calculateSectionHeaders() {
 		int i = 0;
@@ -86,9 +98,9 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 		c.moveToPosition(-1);
 
 		while (c.moveToNext()) {
-			final String group = c.getString(mGroupColumn);
+			final String group = getCustomGroup(c.getString(mGroupColumn));
 
-			if (!group.equals(previous)) {
+			if (!previous.equals(group)) {
 				sectionsIndexer.put(i + count, group);
 				previous = group;
 
