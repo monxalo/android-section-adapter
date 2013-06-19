@@ -37,6 +37,14 @@ public class SectionCursorActivity extends ListActivity {
 		mCursor.addRow(new String []{ "7","Section 2", "Item 6" });
 		mCursor.addRow(new String []{ "8","Section 2", "Item 7" });
 		mCursor.addRow(new String []{ "9","Section 3", "Item 8" });
+		mCursor.addRow(new String []{ "9","Section 3", "Item 9" });
+		mCursor.addRow(new String []{ "9","Section 3", "Item 10" });
+		mCursor.addRow(new String []{ "9","Section 3", "Item 11" });
+		mCursor.addRow(new String []{ "9","Section 4", "Item 12" });
+		mCursor.addRow(new String []{ "9","Section 4", "Item 13" });
+		mCursor.addRow(new String []{ "9","Section 5", "Item 14" });
+		mCursor.addRow(new String []{ "9","Section 5", "Item 15" });
+		mCursor.addRow(new String []{ "9","Section 5", "Item 16" });
 	}
     
     @Override

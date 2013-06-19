@@ -95,6 +95,10 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 
 		sectionsIndexer.clear();
 
+		if(c == null) {
+			return;
+		}
+		
 		c.moveToPosition(-1);
 
 		while (c.moveToNext()) {
@@ -125,8 +129,10 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 		if (viewType == TYPE_NORMAL) {
 			Cursor c = (Cursor) getItem(position);
 
-			if (c == null)
-				return mLayoutInflater.inflate(mHeaderRes, null);
+			if (c == null) {
+				if(LOGV) Log.d(TAG, "getItem(" + position + ") = null");
+				return mLayoutInflater.inflate(mHeaderRes, parent, false);
+			}
 
 			final int mapCursorPos = getSectionForPosition(position);
 			c.moveToPosition(mapCursorPos);
@@ -141,7 +147,7 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 					Log.v(TAG, "Creating new view for section");
 
 				holder = new ViewHolder();
-				convertView = mLayoutInflater.inflate(mHeaderRes, null);
+				convertView = mLayoutInflater.inflate(mHeaderRes, parent, false);
 				holder.textView = (TextView) convertView;
 
 				convertView.setTag(holder);
@@ -239,8 +245,9 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 
 		final Cursor oldCursor = super.swapCursor(newCursor);
 
+		calculateSectionHeaders();
+		
 		if (newCursor != null) {
-			calculateSectionHeaders();
 			newCursor.registerDataSetObserver(mDataSetObserver);
 		}
 
