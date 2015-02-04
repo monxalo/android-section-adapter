@@ -1,49 +1,24 @@
-# Android project ignore from https://github.com/github/gitignore/blob/master/Android.gitignore
-
-# built application files
-*.apk
-*.ap_
-
-# files for the dex VM
-*.dex
-
-# Java class files
-*.class
-
-# generated files
-bin/
-gen/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Eclipse project ignore from https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
-# Remove .project from ignore
-# Remove .classpath from ignore
-.project
 .classpath
+.project
+.settings
+eclipsebin
 
-*.pydevproject
-.metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
+bin
+gen
+build
+out
+lib
 
-# External tool builders
-.externalToolBuilders/
+target
+pom.xml.*
+release.properties
 
-# Locally stored "Eclipse launch configurations"
-*.launch
+.idea
+*.iml
+classes
 
-# CDT-specific
-.cproject
+obj
 
-# PDT-specific
-.buildpath
+.DS_Store
+
+.gradle

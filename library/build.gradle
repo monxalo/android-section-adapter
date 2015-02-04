@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+apply plugin: 'android-maven'
+
+dependencies {
+	compile 'com.android.support:support-v4:21.0.3'
+}
+
+android {
+	compileSdkVersion 21
+	buildToolsVersion '21.1.2'
+	defaultConfig {
+		minSdkVersion 7
+	}
+}
+
+install {
+	repositories.mavenInstaller {
+		pom.artifactId = 'android-section-adapter'
+	}
+}
+
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+
+afterEvaluate {
+	androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
+}
