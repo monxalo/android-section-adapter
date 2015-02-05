@@ -13,15 +13,9 @@
 	<name>Android Section Adapter</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.google.android</groupId>
-			<artifactId>android</artifactId>
-			<scope>provided</scope>
-			<version>4.1.1.4</version>
-		</dependency>
-		<dependency>
-	        <groupId>com.google.android</groupId>
-	        <artifactId>support-v4</artifactId>
-      </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+        </dependency>
+    </dependencies>
 </project>

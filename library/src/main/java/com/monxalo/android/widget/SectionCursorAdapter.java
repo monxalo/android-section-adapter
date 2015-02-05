@@ -94,7 +94,7 @@ public abstract class SectionCursorAdapter extends CursorAdapter {
 
         mSectionsIndexer.clear();
 
-		if(c == null) {
+		if(c == null || c.isClosed()) {
 			return;
 		}
 		
