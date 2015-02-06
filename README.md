@@ -3,7 +3,7 @@
 Android Section Adapter
 -----------------------
 
-A simple android ListView adapter to use with [Cursor][2]s.
+A simple android section adapter to use with [Cursor][2]s.
 
 Usage
 -----
