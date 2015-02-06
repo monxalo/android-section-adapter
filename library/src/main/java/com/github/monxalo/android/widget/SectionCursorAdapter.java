@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.monxalo.android.widget;
+package com.github.monxalo.android.widget;
 
 import android.content.Context;
 import android.database.Cursor;

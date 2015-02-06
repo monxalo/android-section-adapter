@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.monxalo</groupId>
+	<groupId>com.github.monxalo</groupId>
 	<artifactId>android-section-adapter-parent</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<packaging>pom</packaging>
 
 	<description>Android ListAdapter for sections.</description>
@@ -34,6 +34,12 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>http://github.com/monxalo/android-section-adapter/issues</url>
+	</issueManagement>
+
 	<developers>
 		<developer>
 			<id>monxalo</id>
@@ -44,6 +50,24 @@
 	<modules>
 		<module>library</module>
 	</modules>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>android-support</id>
+			<url>${env.ANDROID_HOME}/extras/android/m2repository</url>
+		</repository>
+	</repositories>
 
 	<scm>
 		<connection>git://github.com/monxalo/android-section-adapter.git</connection>
@@ -58,8 +82,14 @@
                 <artifactId>android</artifactId>
                 <version>${android.version}</version>
                 <scope>provided</scope>
-            </dependency>
+            </dependency> 
+            <dependency>
+				<groupId>com.android.support</groupId>
+				<artifactId>support-v4</artifactId>
+				<version>19.1.0</version>
+			</dependency>           
         </dependencies>
+
     </dependencyManagement>
 
 	<build>
@@ -76,6 +106,32 @@
 			      		</goals>
 			    	</execution>
 			  	</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>	
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
