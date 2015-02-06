@@ -1,7 +1,7 @@
 
 
 Android Section Adapter
-----
+-----------------------
 
 A simple android ListView adapter to use with [Cursor][2]s.
 
@@ -9,6 +9,9 @@ Usage
 -----
 
 Check out the sample app in `sample/` to see it in action.
+
+The adapter expects the collection you pass to it to be already sorted by
+the column you're grouping.
 
 Download
 --------

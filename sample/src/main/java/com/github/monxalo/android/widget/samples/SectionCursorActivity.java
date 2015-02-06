@@ -1,4 +1,4 @@
-package com.monxalo.android.widget.samples;
+package com.github.monxalo.android.widget.samples;
 
 import android.app.ListActivity;
 import android.content.Context;
