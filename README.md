@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/monxalo/android-section-adapter.svg)](https://travis-ci.org/monxalo/android-section-adapter)
 
 Android Section Adapter
 -----------------------
