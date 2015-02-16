@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/monxalo/android-section-adapter.svg)](https://travis-ci.org/monxalo/android-section-adapter)
+[![Maven Centra](http://img.shields.io/maven-central/v/com.github.monxalo/android-section-adapter.svg)](http://search.maven.org/#search|ga|1|android-section-adapter)
 
 Android Section Adapter
 -----------------------
