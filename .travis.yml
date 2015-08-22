@@ -11,6 +11,7 @@ android:
   components:
     - build-tools-23.0.0
     - android-23
+    - extra-android-m2repository
 
 script:
   - ./gradlew clean check -Dpre-dex=false
