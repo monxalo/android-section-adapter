@@ -2,16 +2,21 @@ apply plugin: 'com.android.application'
 
 dependencies {
 	compile project(':library')
-	compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
 android {
-	compileSdkVersion 21
-	buildToolsVersion '21.1.2'
-	defaultConfig {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility rootProject.ext.targetCompatibilityVersion
+    }
+
+    defaultConfig {
 		versionCode 1
-		versionName "1.0"
-		minSdkVersion 7
-		targetSdkVersion 21
+		versionName "1.0.1"
+        minSdkVersion rootProject.ext.minSdkVersion
+		targetSdkVersion rootProject.ext.targetSdkVersion
 	}
 }

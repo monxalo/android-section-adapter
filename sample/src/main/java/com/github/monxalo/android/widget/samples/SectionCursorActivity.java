@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.monxalo.android.widget.SectionCursorAdapter;
+
 public class SectionCursorActivity extends ListActivity {
 	private static final int PLATFORM = 1;
 	private static final int NAME = 2;

@@ -9,8 +9,8 @@ before_install:
 
 android:
   components:
-    - build-tools-21.1.2
-    - android-21
+    - build-tools-23.0.0
+    - android-23
 
 script:
   - ./gradlew clean check -Dpre-dex=false
