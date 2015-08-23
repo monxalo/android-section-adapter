@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-	compile project(':library')
+    compile project(':library')
 }
 
 android {
@@ -14,9 +14,9 @@ android {
     }
 
     defaultConfig {
-		versionCode 1
-		versionName "1.0.1"
+        versionCode 1
+        versionName "1.0.1"
         minSdkVersion rootProject.ext.minSdkVersion
-		targetSdkVersion rootProject.ext.targetSdkVersion
-	}
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
 }

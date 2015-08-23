@@ -1,20 +1,20 @@
 apply plugin: 'com.android.library'
 
 dependencies {
-	compile deps.androidsupport
+    compile deps.androidsupport
 }
 
 android {
-	compileSdkVersion rootProject.ext.compileSdkVersion
-	buildToolsVersion rootProject.ext.buildToolsVersion
-	defaultConfig {
-		minSdkVersion rootProject.ext.minSdkVersion
-	}
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+    }
 
-	lintOptions {
-		textReport true
-		textOutput 'stdout'
-	}
+    lintOptions {
+        textReport true
+        textOutput 'stdout'
+    }
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
