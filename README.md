@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/monxalo/android-section-adapter.svg)](https://travis-ci.org/monxalo/android-section-adapter)
 [![Maven Centra](http://img.shields.io/maven-central/v/com.github.monxalo/android-section-adapter.svg)](http://search.maven.org/#search|ga|1|android-section-adapter)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/monxalo/android-section-adapter/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Analytics](https://ga-beacon.appspot.com/UA-2983033-3/android-section-adapter/)](https://github.com/igrigorik/ga-beacon)
 
 Android Section Adapter
 -----------------------
